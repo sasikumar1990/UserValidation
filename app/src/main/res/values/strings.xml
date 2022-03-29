@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">User Form</string>
+
+    <string name="reg_national_id">National ID </string>
+    <string name="reg_full_name">Full Name </string>
+    <string name="reg_acc_no">Account Number</string>
+    <string name="reg_education">Education</string>
+    <string name="reg_dob">Date of Birth</string>
+
+    <string name="reg_address">Domicile Address</string>
+    <string name="reg_no">No</string>
+    <string name="reg_house_type">Housing Type</string>
+
+    <string name="reg_national_id_review">National ID   :   </string>
+    <string name="reg_full_name_review">Full Name   :   </string>
+    <string name="reg_acc_no_review">Account Number  :  </string>
+    <string name="reg_education_review">Education  :  </string>
+    <string name="reg_dob_review">Date of Birth  :  </string>
+
+    <string name="reg_address_review">Domicile Address  :  </string>
+    <string name="reg_no_review">No  :  :</string>
+    <string name="reg_house_type_review">Housing Type  :  </string>
+
+    <string-array name="array_educational">
+        <item>Select Education</item>
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
+
+    <string-array name="array_house_type">
+        <item>Select Housing Type</item>
+        <item>Rumah</item>
+        <item>Kantor</item>
+    </string-array>
+
+</resources>

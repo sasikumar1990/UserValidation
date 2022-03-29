@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/menu_section1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/acme"
+        android:gravity="center"
+        android:text="Data Diri"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textNationalId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_national_id_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_section1"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_national_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@{userForm1.name}"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textNationalId"
+        app:layout_constraintTop_toBottomOf="@id/menu_section1"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_full_name_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textNationalId"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textName"
+        app:layout_constraintTop_toBottomOf="@id/textNationalId"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_acc_no_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textName"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_account_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textAccount"
+        app:layout_constraintTop_toBottomOf="@id/textName"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textEducation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_education_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAccount"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_education"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textEducation"
+        app:layout_constraintTop_toBottomOf="@id/textAccount"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_dob_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textEducation"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_dob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textDOB"
+        app:layout_constraintTop_toBottomOf="@id/textEducation"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/menu_section2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/acme"
+        android:gravity="center"
+        android:text="Alamat KTP"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_dob"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_address_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_section2"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textAddress"
+        app:layout_constraintTop_toBottomOf="@id/menu_section2"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textHousingType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_house_type_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_address"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_house_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textHousingType"
+        app:layout_constraintTop_toBottomOf="@id/tv_address"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_no_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_house_type"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textNo"
+        app:layout_constraintTop_toBottomOf="@id/tv_house_type"
+        tools:layout_editor_absoluteX="20dp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/acme"
+        android:minHeight="50dp"
+        android:text="Done"
+        app:layout_constraintTop_toBottomOf="@id/tv_no"
+        tools:layout_editor_absoluteX="20dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

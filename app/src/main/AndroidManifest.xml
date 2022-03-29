@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.sutrix.user.validation"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.sutrix.user.validation.ui.view.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.sutrix.user.validation.ui.view.ValidationFormActivity"
+            android:screenOrientation="userPortrait"
+            />
+
+        <activity
+            android:name="com.sutrix.user.validation.ui.view.ValidationKTPFormActivity"
+            android:screenOrientation="userPortrait"
+            />
+
+        <activity
+            android:name="com.sutrix.user.validation.ui.view.ReviewActivity"
+            android:screenOrientation="userPortrait"
+            />
+    </application>
+
+</manifest>
