@@ -35,8 +35,6 @@ class ValidationKTPFormActivity : AppCompatActivity() {
         setupViewModel()
         initListeners()
         initObserver()
-
-
     }
 
     private fun getIntentData() {
@@ -59,10 +57,26 @@ class ValidationKTPFormActivity : AppCompatActivity() {
     private fun initListeners() {
         et_address.addTextChangedListener {
             viewModel.setAddress(it.toString())
+            if(it.toString().isNotEmpty() && it.toString().length <= 100)
+            {
+                tv_error_address.setTextColor(resources.getColor(color.green))
+
+            }else{
+                tv_error_address.setTextColor(resources.getColor(color.red))
+
+            }
         }
 
         et_no.addTextChangedListener {
             viewModel.setNo(it.toString())
+            if(it.toString().isNotEmpty())
+            {
+                tv_error_no.setTextColor(resources.getColor(color.green))
+
+            }else{
+                tv_error_no.setTextColor(resources.getColor(color.red))
+
+            }
         }
 
         spinner_house_type.onItemSelectedListener =
@@ -80,11 +94,12 @@ class ValidationKTPFormActivity : AppCompatActivity() {
                     when (position) {
                         0 -> {
                             viewModel.setHouseType("")
+                            tv_error_house.setTextColor(resources.getColor(color.red))
                         }
                         else -> {
                             viewModel.setHouseType(parent?.selectedItem.toString())
                             houseType = parent?.selectedItem.toString()
-
+                            tv_error_house.setTextColor(resources.getColor(color.green))
                         }
                     }
                 }
@@ -94,13 +109,12 @@ class ValidationKTPFormActivity : AppCompatActivity() {
     private fun initObserver() {
         lifecycleScope.launch {
             viewModel.isSubmitEnabled.collect { value ->
-                submit_button.isEnabled = value
+                submit_button.isEnabled = value   // button will enabled if all validation is true
                if(value) {
                     submit_button.setBackgroundColor(resources.getColor(color.colorPrimary))
                 }else{
                     submit_button.setBackgroundColor(resources.getColor(color.gray))
                }
-
             }
         }
         submit_button.setOnClickListener {

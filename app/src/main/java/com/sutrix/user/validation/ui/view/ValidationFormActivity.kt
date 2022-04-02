@@ -2,6 +2,7 @@ package com.sutrix.user.validation.ui.view
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -47,12 +48,25 @@ class ValidationFormActivity : AppCompatActivity() {
     private fun initListeners() {
         et_national_id.addTextChangedListener {
             viewModel.setNationalId(it.toString())
+            if(it.toString().isNotEmpty() && it.toString().length == 16)
+            {
+                tv_national_error.setTextColor(resources.getColor(color.green))
+            }else{
+                tv_national_error.setTextColor(resources.getColor(color.red))
+            }
+
         }
         et_full_name.addTextChangedListener {
             viewModel.setFullName(it.toString())
         }
         et_account_no.addTextChangedListener {
             viewModel.setAccountNo(it.toString())
+            if(it.toString().isNotEmpty() && it.toString().length >= 8)
+            {
+                tv_account_error.setTextColor(resources.getColor(color.green))
+            }else{
+                tv_account_error.setTextColor(resources.getColor(color.red))
+            }
         }
 
         spinner_education.onItemSelectedListener =
@@ -70,10 +84,13 @@ class ValidationFormActivity : AppCompatActivity() {
                     when (position) {
                         0 -> {
                             viewModel.setEducation("")
+                            tv_filed.setTextColor(resources.getColor(color.red))
+
                         }
                         else -> {
                             viewModel.setEducation(parent?.selectedItem.toString())
                             education = parent?.selectedItem.toString()
+                            tv_filed.setTextColor(resources.getColor(color.green))
 
                         }
                     }
@@ -89,6 +106,7 @@ class ValidationFormActivity : AppCompatActivity() {
                 val sdf = SimpleDateFormat(myFormat, Locale.US)
                 et_date_of_birth.setText(sdf.format(cal.time).toString())
                 viewModel.setDOB(sdf.format(cal.time).toString())
+                tv_dob_error.setTextColor(resources.getColor(color.green))
             }
 
         et_date_of_birth.setOnClickListener {
@@ -106,17 +124,15 @@ class ValidationFormActivity : AppCompatActivity() {
     private fun initObserver() {
         lifecycleScope.launch {
             viewModel.isSubmitEnabled.collect { value ->
-
-                submit_button.isEnabled = value
-               if(value) {
+               submit_button.isEnabled = value  // submit button will enabled if all validation is true
+                if(value) {
                     submit_button.setBackgroundColor(resources.getColor(color.colorPrimary))
                 }else{
                     submit_button.setBackgroundColor(resources.getColor(color.gray))
-               }
+                }
             }
         }
         submit_button.setOnClickListener {
-
             nationalId = et_national_id.text.toString().trim()
             fullName = et_full_name.text.toString().trim()
             accountNo = et_account_no.text.toString().trim()
