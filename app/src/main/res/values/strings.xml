@@ -18,8 +18,10 @@
     <string name="reg_dob_review">Date of Birth  :  </string>
 
     <string name="reg_address_review">Domicile Address  :  </string>
-    <string name="reg_no_review">No  :  :</string>
+    <string name="reg_no_review">No     : </string>
     <string name="reg_house_type_review">Housing Type  :  </string>
+    <string name="reg_province_review">Province      :</string>
+
 
     <string-array name="array_educational">
         <item>Select Education</item>

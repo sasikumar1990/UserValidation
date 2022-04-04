@@ -27,6 +27,7 @@ class ReviewActivity : AppCompatActivity() {
         tv_address.text = intent.getStringExtra("address")
         tv_house_type.text = intent.getStringExtra("houseType")
         tv_no.text = intent.getStringExtra("no")
+        tv_province.text = intent.getStringExtra("province")
 
         done.setOnClickListener {
             val snackBar = Snackbar.make(

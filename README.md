@@ -13,3 +13,6 @@ Use Case:
 Diri Page -> Submit button will enabled if all mandatory filed is validated.
 DataKTP Apge -> Submit/Review button will enabled if all mandatory filed is validated.
 Review Page-> It showing all the data from data diri and data ktp page.
+
+The below API used for Province data.
+// https://dev.farizdotid.com/api/daerahindonesia/provinsi

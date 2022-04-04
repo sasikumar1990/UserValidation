@@ -8,10 +8,12 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProviders
 import com.sutrix.user.validation.R.*
 import androidx.lifecycle.lifecycleScope
+import com.sutrix.user.validation.R
 import com.sutrix.user.validation.ui.viewmodel.ValidationViewModel
 import kotlinx.android.synthetic.main.activity_form_validation.*
 import kotlinx.coroutines.flow.collect
@@ -50,22 +52,30 @@ class ValidationFormActivity : AppCompatActivity() {
             viewModel.setNationalId(it.toString())
             if(it.toString().isNotEmpty() && it.toString().length == 16)
             {
-                tv_national_error.setTextColor(resources.getColor(color.green))
+                tv_national_error.setTextColor(ContextCompat.getColor(applicationContext,color.green))
             }else{
-                tv_national_error.setTextColor(resources.getColor(color.red))
+                tv_national_error.setTextColor(ContextCompat.getColor(applicationContext,color.red))
             }
 
         }
         et_full_name.addTextChangedListener {
             viewModel.setFullName(it.toString())
+            val regexString = "[a-zA-Z]+"
+            if(it.toString().matches(regexString.toRegex()) || it.toString().isEmpty())
+            {
+                tv_name_error.setTextColor(ContextCompat.getColor(applicationContext,color.green))
+            }else{
+                tv_name_error.setTextColor(ContextCompat.getColor(applicationContext,color.red))
+            }
         }
         et_account_no.addTextChangedListener {
             viewModel.setAccountNo(it.toString())
             if(it.toString().isNotEmpty() && it.toString().length >= 8)
             {
-                tv_account_error.setTextColor(resources.getColor(color.green))
+                tv_account_error.setTextColor(ContextCompat.getColor(applicationContext,color.green))
+
             }else{
-                tv_account_error.setTextColor(resources.getColor(color.red))
+                tv_account_error.setTextColor(ContextCompat.getColor(applicationContext,color.red))
             }
         }
 
@@ -84,13 +94,12 @@ class ValidationFormActivity : AppCompatActivity() {
                     when (position) {
                         0 -> {
                             viewModel.setEducation("")
-                            tv_filed.setTextColor(resources.getColor(color.red))
-
+                            tv_filed.setTextColor(ContextCompat.getColor(applicationContext,color.red))
                         }
                         else -> {
                             viewModel.setEducation(parent?.selectedItem.toString())
                             education = parent?.selectedItem.toString()
-                            tv_filed.setTextColor(resources.getColor(color.green))
+                            tv_filed.setTextColor(ContextCompat.getColor(applicationContext,color.green))
 
                         }
                     }
@@ -126,9 +135,9 @@ class ValidationFormActivity : AppCompatActivity() {
             viewModel.isSubmitEnabled.collect { value ->
                submit_button.isEnabled = value  // submit button will enabled if all validation is true
                 if(value) {
-                    submit_button.setBackgroundColor(resources.getColor(color.colorPrimary))
+                    submit_button.setBackgroundColor(ContextCompat.getColor(applicationContext,color.colorPrimary))
                 }else{
-                    submit_button.setBackgroundColor(resources.getColor(color.gray))
+                    submit_button.setBackgroundColor(ContextCompat.getColor(applicationContext,color.gray))
                 }
             }
         }

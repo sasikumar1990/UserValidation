@@ -241,6 +241,33 @@
         tools:layout_editor_absoluteX="20dp" />
 
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textProvince"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="@string/reg_province_review"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_no"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_province"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/acme"
+        android:text="text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/textProvince"
+        app:layout_constraintTop_toBottomOf="@id/tv_no"
+        tools:layout_editor_absoluteX="20dp" />
+
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/done"
         android:layout_width="match_parent"
@@ -250,7 +277,7 @@
         android:fontFamily="@font/acme"
         android:minHeight="50dp"
         android:text="Done"
-        app:layout_constraintTop_toBottomOf="@id/tv_no"
+        app:layout_constraintTop_toBottomOf="@id/tv_province"
         tools:layout_editor_absoluteX="20dp" />
 
 
